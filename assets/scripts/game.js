@@ -25,6 +25,10 @@ class Grid {
 }
 
 class Robot extends Monster {
+  cost = 5;
+  attack = 8;
+  hp = 10;
+  move = 2;
   grids = [
     [0, 0, { type: '07730' }],
     [1, 0, { type: '07730' }],
@@ -39,7 +43,11 @@ class Robot extends Monster {
 }
 
 class Plane extends Monster {
-  z = 1;
+  z = 0.5;
+  cost = 5;
+  attack = 3;
+  hp = 5;
+  move = 4;
 
   constructor(name, detail) {
     super(name, '002', detail);
@@ -83,16 +91,8 @@ cc.Class({
           this.setGridGround(2, 2, '07782');
           this.setGridGround(1, 6, '07925');
           this.setGridGround(4, 6, '07275');
-        }, 1000);
-
-        setTimeout(() => {
-          const robot = new Robot('myrobot', {
-            board: this,
-            i: 1,
-            j: 4,
-          })
-          this.addMonster(robot);
-        }, 2000);
+          this.setGridGround(6, 6, '07652');
+        }, 0);
       });
   },
 
@@ -135,7 +135,7 @@ cc.Class({
       grid.z = z;
     }
     grid.realZ = z;
-    const height = zDiff * grid.node.height;
+    const height = 0.5 * zDiff * grid.node.height;
     const grid_moove = cc.tween().by(1, { y: height }, { easing: "sineOut" });
     const animations = [];
     const gridPromise = new Promise(resolve => {
@@ -234,6 +234,15 @@ cc.Class({
           x -= w / 2;
           y -= h / 2;
           z += 3;
+    
+          grid.node.on('mousedown',  event => {
+            const plane = new Robot('123123', {
+              board: this,
+              i,
+              j,
+            })
+            this.addMonster(plane);
+          });
         }
   
         grids.push(row);
@@ -246,11 +255,14 @@ cc.Class({
   
       this.grids = grids;
       this.monsters = monsters;
-    })
+    });
   },
 
   setGridGround(i, j, id, { oneStep = true } = {}) {
-    const grid = this.grids[i][j];
+    const grid = this.grids[i]?.[j];
+    if (!grid) {
+      return Promise.resolve(() => {});
+    }
     const oldZ = grid.z || 0;
     return Promise.all([
       this.slideGrid(i, j, -1, { temp: true }),
