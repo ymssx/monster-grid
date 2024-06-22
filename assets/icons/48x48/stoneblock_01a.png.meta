@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "025b7b44-599b-404f-a3e6-e8c38b0beccf",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 48,
+  "height": 48,
+  "platformSettings": {},
+  "subMetas": {
+    "stoneblock_01a": {
+      "ver": "1.0.4",
+      "uuid": "e749e735-12a3-46d2-bbb4-0b2aeb11f437",
+      "rawTextureUuid": "025b7b44-599b-404f-a3e6-e8c38b0beccf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1.5,
+      "offsetY": 1.5,
+      "trimX": 0,
+      "trimY": 3,
+      "width": 45,
+      "height": 39,
+      "rawWidth": 48,
+      "rawHeight": 48,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "e5c66665-f640-4e5c-8eea-b7cb9242e6fa",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 80,
+  "height": 80,
+  "platformSettings": {},
+  "subMetas": {
+    "huntress_demo": {
+      "ver": "1.0.4",
+      "uuid": "80cc7a93-a0ef-458a-9502-42f4db56d995",
+      "rawTextureUuid": "e5c66665-f640-4e5c-8eea-b7cb9242e6fa",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 5,
+      "offsetY": 6.5,
+      "trimX": 19,
+      "trimY": 0,
+      "width": 52,
+      "height": 67,
+      "rawWidth": 80,
+      "rawHeight": 80,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
